@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Raqqa Landscaping Services — Best in the Midwest | Illinois & St. Louis</title>
+<meta name="description" content="Raqqa Landscaping Services — professional lawn care and landscaping across Illinois and the St. Louis area. Lawn mowing, retaining walls, patios, mulch, sidewalks, ponds and much more. Free estimates — call or text!" />
+<meta name="theme-color" content="#0f1c14" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Raqqa Landscaping Services" />
+<meta property="og:description" content="Best in the Midwest — professional landscaping in Illinois & St. Louis. Free estimates, call or text!" />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%232fa84f'%3E%3Cellipse cx='50' cy='24' rx='9' ry='16'/%3E%3Cellipse cx='50' cy='76' rx='9' ry='16'/%3E%3Cellipse cx='24' cy='50' rx='16' ry='9'/%3E%3Cellipse cx='76' cy='50' rx='16' ry='9'/%3E%3Cellipse cx='31' cy='31' rx='9' ry='16' transform='rotate(45 31 31)'/%3E%3Cellipse cx='69' cy='69' rx='9' ry='16' transform='rotate(45 69 69)'/%3E%3Cellipse cx='69' cy='31' rx='16' ry='9' transform='rotate(45 69 31)'/%3E%3Cellipse cx='31' cy='69' rx='16' ry='9' transform='rotate(45 31 69)'/%3E%3C/g%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --green:#2fa84f;
+    --green-bright:#41c463;
+    --green-dark:#1c7a37;
+    --ink:#0f1c14;
+    --ink-2:#16281d;
+    --paper:#ffffff;
+    --muted:#5b6b60;
+    --line:rgba(0,0,0,.08);
+    --shadow:0 18px 40px -18px rgba(15,28,20,.35);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-name{font-family:'Poppins',sans-serif;line-height:1.15;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1150px,92%);margin-inline:auto}
+  section{padding:clamp(64px,9vw,110px) 0}
+
+  /* ---------- Flower logo ---------- */
+  .flower{display:inline-block;width:1em;height:1em;flex:none}
+  .flower ellipse{fill:currentColor}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;
+    padding:.85em 1.5em;border-radius:100px;border:2px solid transparent;
+    cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 24px -10px var(--green-dark)}
+  .btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:var(--ink-2);transform:translateY(-2px)}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.86);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .logo{display:flex;align-items:center;gap:.6rem;font-weight:800}
+  .logo .flower{color:var(--green);font-size:2rem}
+  .logo .brand-name{font-size:1.35rem;letter-spacing:.18em}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-weight:500;color:var(--ink);font-size:.95rem}
+  .nav-links a:hover{color:var(--green)}
+  .nav-links .btn{font-size:.9rem;padding:.6em 1.2em}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;color:var(--ink)}
+  @media(max-width:840px){
+    .nav-links a:not(.btn){display:none}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;
+    background:radial-gradient(120% 130% at 80% 0%,#25623a 0%,var(--ink) 55%);
+    padding:clamp(70px,11vw,140px) 0 clamp(90px,12vw,160px);
+  }
+  .hero .swoosh{
+    position:absolute;inset:0;pointer-events:none;
+  }
+  .hero .swoosh::before,.hero .swoosh::after{
+    content:"";position:absolute;border-radius:50%;
+  }
+  .hero .swoosh::before{
+    width:70vw;height:70vw;right:-22vw;top:-30vw;
+    background:radial-gradient(circle at 30% 30%,rgba(65,196,99,.35),transparent 60%);
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;text-align:center}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:rgba(65,196,99,.16);color:var(--green-bright);
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:.8rem;
+    letter-spacing:.14em;text-transform:uppercase;
+    padding:.5em 1em;border-radius:100px;margin-bottom:1.4rem;
+    border:1px solid rgba(65,196,99,.3);
+  }
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800}
+  .hero h1 .accent{color:var(--green-bright)}
+  .hero p.lede{font-size:clamp(1.05rem,2vw,1.3rem);color:rgba(255,255,255,.82);margin:1.3rem 0 2rem;max-width:38ch}
+  @media(max-width:860px){.hero p.lede{margin-inline:auto}}
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+  @media(max-width:860px){.hero-cta{justify-content:center}}
+
+  .hero-badge{
+    display:flex;flex-direction:column;align-items:center;gap:1.2rem;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:26px;padding:2.6rem 2rem;backdrop-filter:blur(6px);
+  }
+  .hero-badge .flower{color:var(--green-bright);font-size:5.5rem;filter:drop-shadow(0 8px 20px rgba(65,196,99,.4))}
+  .hero-badge .brand-name{font-size:2.4rem;letter-spacing:.3em;font-weight:800}
+  .hero-badge span.sub{color:rgba(255,255,255,.7);font-size:.95rem;letter-spacing:.05em}
+
+  /* ---------- Trust strip ---------- */
+  .strip{background:var(--green);color:#fff}
+  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-around;gap:1.5rem;padding:1.4rem 0;text-align:center}
+  .strip b{font-family:'Poppins',sans-serif;font-size:1.05rem;display:flex;align-items:center;gap:.5rem;font-weight:600}
+
+  /* ---------- Services ---------- */
+  .head{text-align:center;max-width:640px;margin:0 auto 3.5rem}
+  .head .tag{color:var(--green);font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.82rem}
+  .head h2{font-size:clamp(2rem,4.5vw,3rem);margin:.6rem 0 1rem}
+  .head p{color:var(--muted);font-size:1.08rem}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1.2rem}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.8rem 1.6rem;transition:transform .2s ease,box-shadow .2s ease,border-color .2s;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+  .card .ico{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--green-bright),var(--green-dark));
+    color:#fff;margin-bottom:1.1rem;
+  }
+  .card .ico svg{width:26px;height:26px}
+  .card h3{font-size:1.15rem;font-weight:600}
+  .card p{color:var(--muted);font-size:.94rem;margin-top:.3rem}
+
+  /* ---------- Why ---------- */
+  .why{background:var(--ink);color:#fff}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+  @media(max-width:820px){.why-grid{grid-template-columns:1fr}}
+  .why h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:1.2rem}
+  .why h2 .accent{color:var(--green-bright)}
+  .why p.intro{color:rgba(255,255,255,.75);font-size:1.08rem;margin-bottom:1.8rem}
+  .feats{display:grid;gap:1.1rem}
+  .feat{display:flex;gap:1rem;align-items:flex-start}
+  .feat .check{flex:none;width:34px;height:34px;border-radius:50%;background:rgba(65,196,99,.16);color:var(--green-bright);display:grid;place-items:center;font-weight:700}
+  .feat b{font-family:'Poppins',sans-serif;font-weight:600;display:block}
+  .feat span{color:rgba(255,255,255,.68);font-size:.95rem}
+  .why-card{
+    background:linear-gradient(150deg,var(--green-dark),var(--ink-2));
+    border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:2.6rem;text-align:center;
+  }
+  .why-card .flower{font-size:4rem;color:var(--green-bright);margin-bottom:1rem}
+  .why-card .big{font-size:2.2rem;font-family:'Poppins',sans-serif;font-weight:800;margin:.4rem 0}
+  .why-card .muted{color:rgba(255,255,255,.7)}
+
+  /* ---------- Contact / CTA ---------- */
+  .contact{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;text-align:center}
+  .contact h2{font-size:clamp(2.1rem,5vw,3.2rem)}
+  .contact p{font-size:1.15rem;color:rgba(255,255,255,.9);margin:1rem auto 2.4rem;max-width:44ch}
+  .contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;max-width:820px;margin:0 auto}
+  .cc{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+    border-radius:var(--radius);padding:1.6rem;display:flex;flex-direction:column;
+    align-items:center;gap:.5rem;transition:background .2s,transform .2s;
+  }
+  .cc:hover{background:rgba(255,255,255,.2);transform:translateY(-4px)}
+  .cc .ico{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--green-dark);display:grid;place-items:center}
+  .cc .ico svg{width:22px;height:22px}
+  .cc small{opacity:.85;letter-spacing:.05em;text-transform:uppercase;font-size:.72rem}
+  .cc b{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:600;word-break:break-word}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:3rem 0 2.2rem}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center}
+  .foot .logo .brand-name{color:#fff}
+  .foot .logo .flower{color:var(--green-bright)}
+  .foot a:hover{color:var(--green-bright)}
+  .foot-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+  .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:2rem;padding-top:1.5rem;font-size:.85rem;text-align:center}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- reusable flower svg -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flower" viewBox="0 0 100 100">
+    <ellipse cx="50" cy="22" rx="8.5" ry="17"/>
+    <ellipse cx="50" cy="78" rx="8.5" ry="17"/>
+    <ellipse cx="22" cy="50" rx="17" ry="8.5"/>
+    <ellipse cx="78" cy="50" rx="17" ry="8.5"/>
+    <ellipse cx="30" cy="30" rx="8.5" ry="17" transform="rotate(45 30 30)"/>
+    <ellipse cx="70" cy="70" rx="8.5" ry="17" transform="rotate(45 70 70)"/>
+    <ellipse cx="70" cy="30" rx="17" ry="8.5" transform="rotate(45 70 30)"/>
+    <ellipse cx="30" cy="70" rx="17" ry="8.5" transform="rotate(45 30 70)"/>
+  </symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <svg class="flower"><use href="#flower"/></svg>
+      <span class="brand-name">RAQQA</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+16185769708" class="btn btn-primary">Free Estimate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="swoosh"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><svg class="flower" style="width:1em;height:1em"><use href="#flower"/></svg> Illinois &amp; St. Louis Area</span>
+        <h1>Landscaping done <span class="accent">right.</span><br>Best in the Midwest.</h1>
+        <p class="lede">From lawn mowing to retaining walls, patios and ponds — Raqqa Landscaping Services keeps your property looking its best all year round.</p>
+        <div class="hero-cta">
+          <a href="tel:+16185769708" class="btn btn-primary">📞 Call for a Free Estimate</a>
+          <a href="sms:+16188822146" class="btn btn-ghost">💬 Text Us</a>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <svg class="flower"><use href="#flower"/></svg>
+        <span class="brand-name">RAQQA</span>
+        <span class="sub">Landscaping Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <b>✅ Free Estimates</b>
+      <b>🌎 Illinois &amp; St. Louis</b>
+      <b>🏆 Best in the Midwest</b>
+      <b>📞 Call or Text</b>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="tag">What We Do</span>
+        <h2>Our Services</h2>
+        <p>Full-service landscaping and lawn care for homes and commercial lots — and much more.</p>
+      </div>
+      <div class="services">
+        <!-- cards injected below -->
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="why">
+    <div class="wrap why-grid">
+      <div class="reveal">
+        <h2>Why choose <span class="accent">Raqqa?</span></h2>
+        <p class="intro">We treat every yard like our own. Reliable, detail-focused crews delivering clean, professional results across the Midwest.</p>
+        <div class="feats">
+          <div class="feat"><span class="check">✓</span><div><b>Free Estimates</b><span>Call or text and we'll quote your project — no obligation.</span></div></div>
+          <div class="feat"><span class="check">✓</span><div><b>Full-Service Crew</b><span>Mowing, hardscapes, mulch, ponds — one team for everything.</span></div></div>
+          <div class="feat"><span class="check">✓</span><div><b>Residential &amp; Commercial</b><span>Homes, lots and property maintenance of any size.</span></div></div>
+          <div class="feat"><span class="check">✓</span><div><b>Local &amp; Trusted</b><span>Proudly serving Illinois and the St. Louis area.</span></div></div>
+        </div>
+      </div>
+      <div class="why-card reveal">
+        <svg class="flower"><use href="#flower"/></svg>
+        <div class="big">Best in the Midwest</div>
+        <p class="muted">Quality landscaping you can count on, season after season.</p>
+        <a href="tel:+16185769708" class="btn btn-primary" style="margin-top:1.4rem">Get Your Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Get a Free Estimate</h2>
+        <p>Ready to transform your property? Call or text us today — we'd love to help.</p>
+      </div>
+      <div class="contact-cards reveal">
+        <a class="cc" href="tel:+16185769708">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <small>Call</small><b>618-576-9708</b>
+        </a>
+        <a class="cc" href="sms:+16188822146">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <small>Call or Text</small><b>618-882-2146</b>
+        </a>
+        <a class="cc" href="mailto:raqqa2003@yahoo.com">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <small>Email</small><b>raqqa2003@yahoo.com</b>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#top" class="logo">
+        <svg class="flower"><use href="#flower"/></svg>
+        <span class="brand-name">RAQQA</span>
+      </a>
+      <div class="foot-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+16185769708">618-576-9708</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> Raqqa Landscaping Services · Illinois &amp; St. Louis Area · Best in the Midwest
+    </div>
+  </div>
+</footer>
+
+<script>
+  // services data
+  const leaf='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>';
+  const services=[
+    ['Lawn Mowing','Clean, even cuts to keep your grass healthy and sharp.'],
+    ['Landscape Planning','Custom designs that bring your outdoor vision to life.'],
+    ['Trimming','Shrubs, hedges and edges kept neat and tidy.'],
+    ['Lots Cleaning','Clearing and cleanup for lots of any size.'],
+    ['Retaining Walls','Sturdy, attractive walls built to last.'],
+    ['Patios','Beautiful outdoor spaces for relaxing and entertaining.'],
+    ['Mulch','Fresh mulch for healthier beds and a finished look.'],
+    ['Bed Weeding & Maintenance','Weed control and upkeep to keep beds pristine.'],
+    ['Rocks','Decorative and functional rock work.'],
+    ['Sidewalks','Clean walkways and hardscaping installs.'],
+    ['Brick Edging','Crisp brick borders that define your landscape.'],
+    ['Walks & Ponds','Water features and paths that elevate any yard.'],
+  ];
+  const grid=document.querySelector('.services');
+  grid.innerHTML=services.map((s,i)=>`
+    <div class="card reveal" style="transition-delay:${(i%4)*60}ms">
+      <div class="ico">${leaf}</div>
+      <h3>${s[0]}</h3>
+      <p>${s[1]}</p>
+    </div>`).join('');
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
