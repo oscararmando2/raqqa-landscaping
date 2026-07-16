@@ -9,7 +9,7 @@ Lawn Mowing · Landscape Planning · Trimming · Lots Cleaning · Retaining Wall
 
 ## Contact
 - 📞 / 💬 (314) 484-8038 (call or text)
-- ✉️ raqqa2003@yahoo.com
+- ✉️ antoniesquivelopez@gmail.com
 
 Free estimates — call or text!
 
