@@ -229,6 +229,34 @@
   .cc small{opacity:.85;letter-spacing:.05em;text-transform:uppercase;font-size:.72rem}
   .cc b{font-family:'Poppins',sans-serif;font-size:1.2rem;font-weight:600;word-break:break-word}
 
+  /* ---------- Message form ---------- */
+  .form-head{margin-top:3.2rem}
+  .form-head h3{font-family:'Poppins',sans-serif;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700}
+  .form-head p{margin:.5rem auto 0;font-size:1.02rem;max-width:40ch}
+  .msg-form{max-width:640px;margin:2rem auto 0;display:grid;gap:.9rem;text-align:left}
+  .msg-form .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+  @media(max-width:540px){.msg-form .row{grid-template-columns:1fr}}
+  .msg-form input,.msg-form textarea{
+    width:100%;padding:.9em 1.1em;border-radius:14px;border:1px solid rgba(255,255,255,.35);
+    background:rgba(255,255,255,.12);color:#fff;font:inherit;font-size:1rem;outline:none;
+    transition:border-color .2s,background .2s;
+  }
+  .msg-form input::placeholder,.msg-form textarea::placeholder{color:rgba(255,255,255,.72)}
+  .msg-form input:focus,.msg-form textarea:focus{border-color:#fff;background:rgba(255,255,255,.2)}
+  .msg-form textarea{min-height:130px;resize:vertical}
+  .msg-form button{
+    justify-self:center;margin-top:.4rem;background:#fff;color:var(--green-dark);
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;
+    padding:.9em 2.6em;border:0;border-radius:100px;cursor:pointer;
+    transition:transform .15s,box-shadow .2s;box-shadow:0 12px 26px -12px rgba(0,0,0,.5);
+  }
+  .msg-form button:hover{transform:translateY(-2px)}
+  .msg-form button:disabled{opacity:.6;cursor:default;transform:none}
+  .form-status{text-align:center;font-weight:600;min-height:1.2em;margin-top:.4rem}
+  .form-status.ok{color:#eafff0}
+  .form-status.err{color:#ffe1e1}
+  .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+
   /* ---------- Footer ---------- */
   footer{background:var(--ink);color:rgba(255,255,255,.6);padding:3rem 0 2.2rem}
   .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;align-items:center}
@@ -495,6 +523,22 @@
           <small>Email</small><b>antoniesquivelopez@gmail.com</b>
         </a>
       </div>
+
+      <div class="form-head reveal">
+        <h3>Or leave us a message</h3>
+        <p>Send us the details and we'll get back to you as soon as we can.</p>
+      </div>
+      <form class="msg-form reveal" id="contactForm" novalidate>
+        <div class="row">
+          <input name="name" placeholder="Your name" required autocomplete="name">
+          <input name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel">
+        </div>
+        <input name="email" type="email" placeholder="Your email" required autocomplete="email">
+        <textarea name="message" placeholder="How can we help? Tell us about your project, address, timeline, etc." required></textarea>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit">Send Message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -591,6 +635,48 @@
     const dx=(e.clientX/innerWidth-.5), dy=(e.clientY/innerHeight-.5);
     badge.style.transform=`translate(${dx*18}px,${dy*18}px)`;
   });
+
+  // contact form -> emails via FormSubmit (no backend needed)
+  const form=document.getElementById('contactForm');
+  if(form){
+    const status=document.getElementById('formStatus');
+    const btn=form.querySelector('button');
+    form.addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      const f=form.elements;
+      if(f._honey.value) return;                    // honeypot: silently drop bots
+      const name=f['name'].value.trim(), email=f['email'].value.trim(),
+            phone=f['phone'].value.trim(), message=f['message'].value.trim();
+      if(!name||!email||!message){
+        status.className='form-status err';
+        status.textContent='Please fill in your name, email and message.';
+        return;
+      }
+      btn.disabled=true; const orig=btn.textContent; btn.textContent='Sending…';
+      status.className='form-status'; status.textContent='';
+      try{
+        const r=await fetch('https://formsubmit.co/ajax/antoniesquivelopez@gmail.com',{
+          method:'POST',
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({
+            name:name, email:email,
+            phone:phone||'(not provided)', message:message,
+            _subject:'New message from the Raqqa website',
+            _template:'table'
+          })
+        });
+        if(!r.ok) throw new Error('http '+r.status);
+        status.className='form-status ok';
+        status.textContent="✅ Thanks! Your message was sent — we'll get back to you soon.";
+        form.reset();
+      }catch(err){
+        status.className='form-status err';
+        status.textContent='Sorry, it could not send. Please call or text (314) 484-8038.';
+      }finally{
+        btn.disabled=false; btn.textContent=orig;
+      }
+    });
+  }
 </script>
 </body>
 </html>
